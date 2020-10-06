@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://kit.fontawesome.com/3b1ca000cb.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="{% static 'images/icons/webICON/man.ico' %}">
+
+    <title>M Parimal</title>
+</head>
+
+<body>
+    <header id="header">
+        <nav>
+            <div class="logo">
+                <h1>M Parimal</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#middle">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#signup">Contact</a></li>
+            </ul>
+            <div class="bars">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+        <div class="image">
+            <img src="{% static 'images/pari.png' %}">
+        </div>
+        <div class="container">
+            <div>
+                <h1>Welcome ,
+                    <h1>I am the </h1>
+                    <h1>Programmer !</h1>
+            </div>
+            <a href="{% url 'download' %}"><button type="button"> PORTFOLIO </button></a>
+            
+        </div>
+    </header>
+
+    <section id="middle">
+        <div class="middle">
+            <div class="middle-text">
+                <h1>Web Developer !</h1>
+            </div>
+            <div class="middle-text">
+                <h1>ML and AI Enthusiastic !</h1>
+            </div>
+            <div class="middle-text">
+                <h1>Hardworker and self learner !</h1>
+            </div>
+            <div class="middle-text">
+                <h1>Python and Java Programmer !</h1>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container-for-projects">
+
+            <div class="card-for-projects" id="card-right">
+                <img src="{% static 'images/chat.png' %}">
+                <h1>
+                    The Linux based terminal chat application was made by me using Java as well as Python. After
+                    completing this projects I packaged this into Snap packages that can be installed on every Linux
+                    distribution using the "snap install" command!
+                </h1>
+            </div>
+            <div class="card-for-projects" id="card-left">
+
+                <h1>
+                    I also made a chatting mobile app using Flutter that is "Dart" language that works as same as
+                    WhatsApp. For this I used Firebase as a database from Google.
+                </h1>
+                <img src="{% static 'images/chat.png' %}">
+            </div>
+            <div class="card-for-projects" id="card-right">
+                <img src="{% static 'images/blog.png' %}">
+                <h1>
+                    Using Python's framework that is Django, I developed my own blog site where you can upload, remove,
+                    update your thoughts ! I had also hosted that website on "pythonanywhere.com".
+                </h1>
+            </div>
+            <div class="card-for-projects" id="card-left">
+
+                <h1>
+                    Using haarcascade file, Python as a programming language and MySQL as a database I created the
+                    Attendance by Facial recognition system ! The efficiency of this projects is 99%!
+                </h1>
+                <img src="{% static 'images/face.png' %}">
+            </div>
+            <div class="card-for-projects" id="card-right">
+                <img src="{% static 'images/portfolio.png' %}">
+                <h1>
+                    And last, this portfolio site is part of my project where I can give this website link in my resume.
+                    For this site, Django is used as a backend!
+                </h1>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section id="skills">
+        <div class="skills-container">
+            <div class="container-for-images">
+                <div class="divs-for-images">
+                    <div><img src="{% static 'images/icons/flutter.png' %}"></div>
+                    <div><img src="{% static 'images/icons/opencv.png' %}"></div>
+                    <div><img src="{% static 'images/icons/linux.png' %}"></div>
+                </div>
+                <div class="divs-for-images">
+                    <div><img src="{% static 'images/icons/python.png' %}"></div>
+                    <div><img src="{% static 'images/icons/java.png' %}"></div>
+                    <div><img src="{% static 'images/icons/django.png' %}"></div>
+                </div>
+                <div class="divs-for-images">
+                    <div><img src="{% static 'images/icons/GO.png' %}"></div>
+                    <div><img src="{% static 'images/icons/ml.png' %}"></div>
+                    <div><img src="{% static 'images/icons/shell.png' %}"></div>
+                </div>
+                <div class="divs-for-images">
+                    <div><img src="{% static 'images/icons/linux.png' %}"></div>
+                    <div><img src="{% static 'images/icons/django.png' %}"></div>
+                </div>
+            </div>
+    </section>
+    <section id="signup">
+        <div class="container-signup">
+            <form name="formREG" autocomplete="off" method="POST">
+                {% csrf_token %}
+                <div class="container-form">
+                    <h1>Any Queries ?</h1>
+                    <br> <br>
+                    <div class="hr"></div>
+                    {{form}}
+                 <button class="signup-btn" type="submit"> Ask Me </button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section id="social">
+        <img src="{% static 'images/icons/fb.png' %}">
+        <img src="{% static 'images/icons/in.png' %}">
+        <img src="{% static 'images/icons/tw.png' %}">
+        <img src="{% static 'images/icons/ln.png' %}">
+    </section>
+    <script>
+        const NavSlide = () => {
+                const burger = document.querySelector(".bars");
+                const nav = document.querySelector(".nav-links");
+                const navLinks = document.querySelector(".nav-links li");
+
+                burger.addEventListener("click", () => {
+                    nav.classList.toggle('nav-active');
+                    burger.classList.toggle("toggle");
+                });
+
+            }
+            NavSlide();
+            $(window).on("scroll", function () {
+                if ($(window).scrollTop()) {
+                    $('nav').addClass('black');
+                }
+
+                else {
+                    $('nav').removeClass('black');
+                }
+            })
+    </script>
+</body>
+
+</html>
